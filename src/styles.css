@@ -1,0 +1,8 @@
+.tau-qwen-tts {
+  display: grid;
+  gap: 12px;
+}
+.tau-qwen-tts label {
+  display: grid;
+  gap: 6px;
+}
