@@ -1,5 +1,5 @@
-# 开发状态
+# 开发指南
 
-当前为M2独立源码，依赖尚未正式发布的SDK 0.13.0草案。使用pnpm、TypeScript；构建脚本来自现行模板。M2在隔离作者目录使用客户端生成的声明包验证，源码不写本机依赖路径。公共SDK、锁文件及GitHub发布按M3完成。
+使用 Node.js 22、pnpm 11.9.0、TypeScript 和公共 SDK 0.13.0。克隆后运行 `pnpm install --frozen-lockfile`、`pnpm test`、`pnpm build`，产物为 `dist/tau.tts-qwen-0.1.0.zip`。调整版本时同步修改 package.json 和 manifest.json；推送对应版本 tag 后，GitHub Action 自动构建并发布 ZIP 到 Release。
 
 provider测试使用模拟fetch与uploadRemote，不读取用户密钥、不发送收费请求。网络仅通过宿主API，实例固定账号和模型；中止信号贯穿参考文件上传、HEAD、复刻、合成与音频下载。HEAD预检沿用Qwen旧行为，不扩展为所有上传服务的限制。
