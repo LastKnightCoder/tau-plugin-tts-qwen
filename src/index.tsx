@@ -1,5 +1,6 @@
+import { MobileSettings } from "./mobile-settings";
 import { useState } from "react";
-import { definePlugin, type PluginSettingsProps } from "@tau/plugins";
+import { definePlugin, usePluginEnvironment, type PluginSettingsProps } from "@tau/plugins";
 import { Button, Input, SettingRow } from "@tau/ui";
 import { createQwenInstance, parseConfig } from "./provider";
 import { QWEN_TTS_MODELS } from "./catalog";
@@ -73,6 +74,16 @@ function Settings({ ttsConfig, context }: PluginSettingsProps) {
     </>
   );
 }
+
+function SettingsView(props: PluginSettingsProps) {
+  const environment = usePluginEnvironment();
+  return environment.platform === "desktop" ? (
+    <Settings {...props} />
+  ) : (
+    <MobileSettings {...props} />
+  );
+}
+
 export default definePlugin({
   ...__PLUGIN_META__,
   create: () => ({
@@ -92,7 +103,7 @@ export default definePlugin({
         id: "tts",
         title: __PLUGIN_META__.name,
         target: "tts",
-        component: Settings,
+        component: SettingsView,
       });
     },
   }),

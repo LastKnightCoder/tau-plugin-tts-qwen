@@ -1,12 +1,14 @@
 # 兼容性与开发验证
 
-当前依赖 SDK 0.42.0、UI 0.5.0；插件版本与最低客户端版本以 manifest.json 为准。使用格式 3，仅声明 desktop；保留插件 ID、原有数据字段与功能，统一安装包协议，不把新 SDK 版本等同于移动平台支持。
+当前依赖 SDK 0.44.0、UI 0.5.0；插件版本与最低客户端版本以 manifest.json 为准。使用格式 3，同一安装包声明 desktop、android、ios；保留插件 ID、原有数据字段与功能。
 
 ## 平台边界
 
-依赖 tts、原生 fetch 与领域设置，移动宿主尚未接入这些作者 API。移动应用自己的内置服务与插件提供方协议不同，SDK 升级不会自动开放这些能力。
+依赖 `context.tts`、宿主 fetch 与 `settings target: "tts"`。移动端 0.2.7 起接入同一接口：账号、模型、当前音色与试听由宿主「我的 → 语音 → 语音合成」统一管理，插件按 `usePluginEnvironment().platform` 在手机上渲染 `mobile-settings.tsx` 的账号表单，桌面表单保持不变。
 
-跨端能力以[官方 API 支持矩阵](https://github.com/LastKnightCoder/tau-plugin-template/blob/main/docs/api-support.md)为准。未来适配仍使用同一插件 ID 与更高版本，节点 type 和历史数据保持兼容；不生成另一个 Android 专用插件。
+音色复刻经 `context.upload.uploadRemote` 取得公网地址，两端都需要可公开读取的远端上传服务；本地保存模式下复刻直接失败，不影响普通合成。
+
+跨端能力以[官方 API 支持矩阵](https://github.com/LastKnightCoder/tau-plugin-template/blob/main/docs/api-support.md)为准。增加平台使用同一插件 ID 与更高版本，历史数据保持兼容；不生成另一个移动端专用插件。
 
 ## 验证与发布
 
