@@ -1,5 +1,4 @@
 {
-  "formatVersion": 1,
   "id": "tau.tts-qwen",
   "name": "Qwen 语音",
   "description": "使用阿里云百炼合成语音、查询音色，通过当前资源上传服务复刻音色。",
@@ -11,10 +10,14 @@
     "通义",
     "Qwen"
   ],
-  "version": "0.1.7",
-  "minAppVersion": "0.59.0",
-  "apiVersion": 1,
-  "platform": "desktop",
-  "format": "cjs",
-  "main": "main.js"
+  "version": "0.1.8",
+  "requires": [
+    "fetch",
+    "upload"
+  ],
+  "targets": {
+    "desktop": {
+      "minAppVersion": "0.59.2"
+    }
+  }
 }
