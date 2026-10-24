@@ -4,7 +4,7 @@
   "description": "使用阿里云百炼合成语音、查询音色，通过当前资源上传服务复刻音色。",
   "categories": ["voice"],
   "keywords": ["朗读", "通义", "Qwen"],
-  "version": "0.1.9",
+  "version": "0.1.10",
   "targets": {
     "desktop": {
       "minAppVersion": "0.59.4"
