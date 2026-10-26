@@ -1,10 +1,10 @@
 # 兼容性与开发验证
 
-当前依赖 SDK 0.44.0、UI 0.5.0；插件版本与最低客户端版本以 manifest.json 为准。使用格式 3，同一安装包声明 desktop、android、ios；保留插件 ID、原有数据字段与功能。
+当前依赖 SDK 0.47.0、UI 0.5.0；插件版本与最低客户端版本以 manifest.json 为准。使用格式 3，同一安装包声明 desktop、android、ios；保留插件 ID、原有数据字段与功能。
 
 ## 平台边界
 
-依赖 `context.tts`、宿主 fetch 与 `settings target: "tts"`。移动端 0.2.7 起接入同一接口：账号、模型、当前音色与试听由宿主「我的 → 语音 → 语音合成」统一管理，插件按 `usePluginEnvironment().platform` 在手机上渲染 `mobile-settings.tsx` 的账号表单，桌面表单保持不变。
+依赖 `context.tts`、宿主 fetch 与 `settings target: "tts"`。移动端 0.2.7 起接入同一接口：插件页统一管理账号、凭据和模型，声明式 form 由桌面及移动宿主渲染；应用语音设置负责当前账号、模型、音色与试听。保存不切换当前服务。
 
 音色复刻经 `context.upload.uploadRemote` 取得公网地址，两端都需要可公开读取的远端上传服务；本地保存模式下复刻直接失败，不影响普通合成。
 
