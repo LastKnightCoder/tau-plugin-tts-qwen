@@ -4,16 +4,28 @@
   "description": "使用阿里云百炼合成语音、查询音色，通过当前资源上传服务复刻音色。",
   "categories": ["voice"],
   "keywords": ["朗读", "通义", "Qwen"],
-  "version": "0.1.14",
+  "i18n": {
+    "zh-TW": {
+      "name": "Qwen 語音",
+      "description": "使用阿里雲百煉進行語音合成與查詢音色，並透過目前的資源上傳服務複刻音色。",
+      "keywords": ["語音合成", "朗讀", "通義", "Qwen"]
+    },
+    "en-US": {
+      "name": "Qwen Speech",
+      "description": "Synthesize speech and browse voices with Alibaba Cloud Model Studio (Bailian), and clone voices using your configured resource upload service.",
+      "keywords": ["text-to-speech", "TTS", "Tongyi", "Qwen"]
+    }
+  },
+  "version": "0.1.15",
   "targets": {
     "desktop": {
-      "minAppVersion": "0.60.2"
+      "minAppVersion": "0.68.0"
     },
     "android": {
-      "minAppVersion": "0.2.9"
+      "minAppVersion": "0.6.0"
     },
     "ios": {
-      "minAppVersion": "0.2.9"
+      "minAppVersion": "0.6.0"
     }
   }
 }

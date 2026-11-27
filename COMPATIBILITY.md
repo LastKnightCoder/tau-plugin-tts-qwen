@@ -1,6 +1,6 @@
 # 兼容性与开发验证
 
-当前依赖 SDK 0.47.0、UI 0.5.0；插件版本与最低客户端版本以 manifest.json 为准。使用格式 3，同一安装包声明 desktop、android、ios；保留插件 ID、原有数据字段与功能。
+当前依赖 SDK 0.63.0、UI 0.7.1；插件版本与最低客户端版本以 manifest.json 为准。使用格式 3，同一安装包声明 desktop、android、ios；保留插件 ID、原有数据字段与功能。
 
 ## 平台边界
 
