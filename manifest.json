@@ -16,16 +16,16 @@
       "keywords": ["text-to-speech", "TTS", "Tongyi", "Qwen"]
     }
   },
-  "version": "0.1.15",
+  "version": "0.1.16",
   "targets": {
     "desktop": {
       "minAppVersion": "0.68.0"
     },
     "android": {
-      "minAppVersion": "0.6.0"
+      "minAppVersion": "0.7.0"
     },
     "ios": {
-      "minAppVersion": "0.6.0"
+      "minAppVersion": "0.7.0"
     }
   }
 }
